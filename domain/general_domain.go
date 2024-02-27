@@ -1,5 +1,5 @@
 package domain
 
 type Sortable struct {
-	Sorting int `json:"sorting"`
+	Sorting int `json:"sorting" col:"sorting"`
 }
