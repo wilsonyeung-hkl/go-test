@@ -3,6 +3,7 @@ package main
 import (
 	domain "clyeung-hkl/go-test/domain"
 	sql "clyeung-hkl/go-test/pkg/sql"
+	"fmt"
 )
 
 func main() {
@@ -40,7 +41,19 @@ func main() {
 		},
 	})
 
+	fmt.Println(n.GetCol())
+	fmt.Println(n.GetPrimaryKey())
+
 	n.Insert(e)
+
+	a := []domain.Era{}
+	for _ = range 100 {
+		a = append(a, e)
+	}
+
+	fmt.Println(len(a))
+	n.BulkInsert(a)
+
 	// s.Select(sql.SelectParams{
 	// 	Field: []string{"test1", "test2"},
 	// 	Where: sql.Where{

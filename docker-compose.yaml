@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: test-dev-mysql
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "$MYSQL_PORT:$MYSQL_PORT"
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQL_PASSWORD
+      - MYSQL_DATABASE=$MYSQL_DB
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  pma:
+    image: phpmyadmin:5.2
+    container_name: test-dev-pma
+    restart: unless-stopped
+    ports:
+     - 9090:80
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+     - mysql
+  
+volumes:
+  mysql-data:

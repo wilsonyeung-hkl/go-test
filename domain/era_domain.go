@@ -1,8 +1,8 @@
 package domain
 
 type Era struct {
-	EraId int    `json:"eraId" col:"era_id" pk:"true"`
-	Name  string `json:"name" col:"name"`
+	EraId int    `json:"eraId" db:"era_id" key:"primary"`
+	Name  string `json:"name" db:"name"`
 	Sortable
 }
 
