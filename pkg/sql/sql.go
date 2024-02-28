@@ -11,18 +11,18 @@ func NewTable[T any](name string, initDefault T) *Table[T] {
 	t := Table[T]{
 		Name:       name,
 		Default:    initDefault,
-		col:        setCol[T](initDefault),
-		primaryKey: setPrimaryKey[T](initDefault),
+		col:        setCol(initDefault),
+		primaryKey: setPrimaryKey(initDefault),
 	}
 
 	return &t
 }
 
-func setCol[T any](t T) []string {
+func setCol(t any) []string {
 	return recursiveGetStructTagValue(t, "db")
 }
 
-func setPrimaryKey[T any](t T) []string {
+func setPrimaryKey(t any) []string {
 	return recursiveSearchTagValueWithTagPair(t, "key", "primary", "db")
 }
 
