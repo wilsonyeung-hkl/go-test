@@ -7,6 +7,8 @@ type Table[T any] struct {
 	primaryKey []string
 }
 
+const colStructTag = "db"
+
 func NewTable[T any](name string, initDefault T) *Table[T] {
 	t := Table[T]{
 		Name:       name,
@@ -19,11 +21,11 @@ func NewTable[T any](name string, initDefault T) *Table[T] {
 }
 
 func setCol(t any) []string {
-	return recursiveGetStructTagValue(t, "db")
+	return recursiveGetStructTagValue(t, colStructTag)
 }
 
 func setPrimaryKey(t any) []string {
-	return recursiveSearchTagValueWithTagPair(t, "key", "primary", "db")
+	return recursiveSearchTagValueWithTagPair(t, "key", "primary", colStructTag)
 }
 
 func (table Table[T]) GetCol() []string {

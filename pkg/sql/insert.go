@@ -7,7 +7,7 @@ import (
 )
 
 func (table Table[T]) Insert(t T) error {
-	structMap := recursiveTagMap(t, "db")
+	structMap := recursiveTagMap(t, colStructTag)
 	s := table.buildInsertStatement(structMap)
 	fmt.Println(s)
 
@@ -22,10 +22,10 @@ func (table Table[T]) BulkInsert(t []T) error {
 	mArr := make([]map[string]interface{}, len(t)-1)
 	for i, e := range t {
 		if i > 0 {
-			mArr[i-1] = recursiveTagMap(e, "db")
+			mArr[i-1] = recursiveTagMap(e, colStructTag)
 		}
 	}
-	s := table.buildInsertStatement(recursiveTagMap(t[0], "db"), mArr...)
+	s := table.buildInsertStatement(recursiveTagMap(t[0], colStructTag), mArr...)
 	fmt.Println(s)
 
 	return nil
