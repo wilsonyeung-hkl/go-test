@@ -1,19 +1,17 @@
 package main
 
 import (
-	domain "clyeung-hkl/go-test/domain"
-	sql "clyeung-hkl/go-test/pkg/sql"
-	"fmt"
+	docx "clyeung-hkl/go-test/pkg/docx"
 )
 
 func main() {
-	e := domain.Era{
-		EraId: 1,
-		Name:  "new era",
-		Sortable: domain.Sortable{
-			Sorting: 2,
-		},
-	}
+	// e := domain.Era{
+	// 	EraId: 1,
+	// 	Name:  "new era",
+	// 	Sortable: domain.Sortable{
+	// 		Sorting: 2,
+	// 	},
+	// }
 
 	// fmt.Println("test")
 	// fmt.Println(strconv.Itoa(e.Sorting))
@@ -33,26 +31,26 @@ func main() {
 	// 	},
 	// }
 
-	n := sql.NewTable[domain.Era]("Era", domain.Era{
-		EraId: 0,
-		Name:  "",
-		Sortable: domain.Sortable{
-			Sorting: 0,
-		},
-	})
+	// n := sql.NewTable[domain.Era]("Era", domain.Era{
+	// 	EraId: 0,
+	// 	Name:  "",
+	// 	Sortable: domain.Sortable{
+	// 		Sorting: 0,
+	// 	},
+	// })
 
-	fmt.Println(n.GetCol())
-	fmt.Println(n.GetPrimaryKey())
+	// fmt.Println(n.GetCol())
+	// fmt.Println(n.GetPrimaryKey())
 
-	n.Insert(e)
+	// n.Insert(e)
 
-	a := []domain.Era{}
-	for _ = range 100 {
-		a = append(a, e)
-	}
+	// a := []domain.Era{}
+	// for _ = range 100 {
+	// 	a = append(a, e)
+	// }
 
-	fmt.Println(len(a))
-	n.BulkInsert(a)
+	// fmt.Println(len(a))
+	// n.BulkInsert(a)
 
 	// s.Select(sql.SelectParams{
 	// 	Field: []string{"test1", "test2"},
@@ -65,4 +63,6 @@ func main() {
 	// 	Limit:    9,
 	// })
 	// s.Insert(e)
+
+	docx.Test()
 }

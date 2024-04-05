@@ -1,2 +1,10 @@
+baliance.com/gooxml v1.0.1 h1:fG5lmxmjEVFfbKQ2NuyCuU3hMuuOb5avh5a38SZNO1o=
+baliance.com/gooxml v1.0.1/go.mod h1:+gpUgmkAF4zCtwOFPNRLDAvpVRWoKs5EeQTSv/HYFnw=
+github.com/carmel/gooxml v0.0.0-20220216072414-40ff56130850 h1:5HOeLYzNkwXRWppRFonU+3ecOq+PjLvnwpAaTSdvsNs=
+github.com/carmel/gooxml v0.0.0-20220216072414-40ff56130850/go.mod h1:2u6ODG4PzDELX8qnX0wOGCdPJpWxnC5hBM7542SFrYc=
+github.com/richardlehane/msoleps v1.0.3 h1:aznSZzrwYRl3rLKRT3gUk9am7T/mLNSnJINvN0AQoVM=
+github.com/richardlehane/msoleps v1.0.3/go.mod h1:BWev5JBpU9Ko2WAgmZEuiz4/u3ZYTKbjLycmwiWUfWg=
+github.com/unidoc/unioffice v1.30.0 h1:S2t4yyRxYpMPV4cUhsdiihUFr1Qqi6+agUSgQ4rDKDE=
+github.com/unidoc/unioffice v1.30.0/go.mod h1:BMguzPH3QO+4hcnmdBxg8iHVnmdLBYJfLh9nDgXwLeI=
 gopkg.in/guregu/null.v3 v3.5.0 h1:xTcasT8ETfMcUHn0zTvIYtQud/9Mx5dJqD554SZct0o=
 gopkg.in/guregu/null.v3 v3.5.0/go.mod h1:E4tX2Qe3h7QdL+uZ3a0vqvYwKQsRSQKM5V4YltdgH9Y=
